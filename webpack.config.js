@@ -1,10 +1,7 @@
 /**
  * @file webpack.config.js
- * @author Amit Agarwal
- * @email amit@labnol.org
- *
- * Google Apps Script Starter Kit
- * https://github.com/labnol/apps-script-starter
+ * @author Patrick Flor <patrick@platter.dev>
+ * @author (original) Amit Agarwal <amit@labnol.org>
  */
 
 const path = require('path');
@@ -75,11 +72,6 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: `${src}/**/*.html`,
-          flatten: true,
-          to: destination,
-        },
-        {
           from: `${src}/../appsscript.json`,
           to: destination,
         },
@@ -91,8 +83,7 @@ module.exports = {
       ],
     }),
     new GasPlugin({
-      comments: false,
-      source: 'digitalinspiration.com',
+      comment: false
     }),
   ],
 };
